@@ -4,21 +4,23 @@
 
 <h2>Add a new post</h2>
 
-<form action="/boards/<%= @the_board.id %>">
+<form action="/insert_post" method="post">
   <div>
     <label for="title_box">Title</label>
-    <input id="title_box" name="the_title" type="text">
+    <input id="title_box" name="query_title" type="text">
   </div>
 
   <div>
     <label for="body_box">Body</label>
-    <textarea id="body_box" name="the_body" rows="3"></textarea>
+    <textarea id="body_box" name="query_body" rows="3"></textarea>
   </div>
 
   <div>
     <label for="expires_box">Expires on</label>
-    <input id="expires_box" name="the_expires" type="date">
+    <input id="expires_box" name="query_expires_on" type="date">
   </div>
+  
+    <input id="board_id" name="query_board_id" type="hidden" value="<%= @the_board.id %>">
 
   <button>
     Add post
